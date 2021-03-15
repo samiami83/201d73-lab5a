@@ -113,7 +113,7 @@ function multiplyArray(multArr) { //eslint-disable-line
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyArray(testArray);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
 // You're done! Submit the link to the repo following the instructions in Canvas. Or, try out the stretch goal below...
 
@@ -134,11 +134,31 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
-function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+function multiplyAnyArray(x) { //eslint-disable-line
+  let newProduct = 1;
+  let string = 'The numbers ';
+
+  for (let i = 0; i < x.length; i++) {
+    newProduct = multiply(newProduct, x[i])[0];
+    ( i===0 ? string = string + x[i] : string = string + ',' + x[i] );
+    // if (i === 0) {
+    //   string = string + x[i]; // The numbers 1
+    // } else {
+    //   string = string + ',' + x[i]; // The numbers 1,2...
+    // }
+  }
+
+  const concatenatedString = string + ' have a product of ' + newProduct + '.';
+  console.log('🚀 ~ file: example.js ~ line 114 ~ multiplyAnyArray ~ concatenatedString', concatenatedString);
+
+  const arrayReults = [newProduct, concatenatedString];
+
+  return (arrayReults);
 
 }
 
+
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
